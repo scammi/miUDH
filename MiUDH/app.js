@@ -1,10 +1,7 @@
-    
-     var map;
-     var BA = {lat: -34.603722, lng: -58.381592};
-
-     function initMap() {
+var map;
+function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: BA,
+          center: {lat: -34.603722, lng: -58.381592},
           zoom: 13,
           styles: estilo
         });
