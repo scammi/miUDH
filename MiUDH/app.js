@@ -1,21 +1,21 @@
-
+    
      var map;
      var BA = {lat: -34.603722, lng: -58.381592};
+
      function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: BA,
           zoom: 13,
           styles: estilo
         });
-            
-            
+         
 	   var infowindow = new google.maps.InfoWindow();
 	   for (var i =0; i < data.length; i++)
        {  
 		 var marker = new google.maps.Marker({
           position: data[i].cords,
           map: map,
-          title: 'Hello World!'
+          title: data[i].nombre
 		 });
            
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -32,10 +32,9 @@
   var searchBox = new google.maps.places.SearchBox((input));
   var markerz = [];
   
-  searchBox.addListener('places_changed', function() {
-          var places = searchBox.getPlaces();
-       
-      
+  searchBox.addListener('places_changed', function() {  
+        var places = searchBox.getPlaces();          
+                    
           if (places.length == 0) {
             return;
           }
@@ -44,31 +43,20 @@
               console.log("Returned place contains no geometry");
               return;
             }
-            var icon = {
-              url: place.icon,
-              size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25)
-            };
-
-            // Create a marker for each place.
             markerz.push(new google.maps.Marker({
               map: map,
-              icon: icon,
               title: place.name,
               position: place.geometry.location
             }));
-
-            if (place.geometry.viewport) {
-              // Only geocodes have viewport.
-              bounds.union(place.geometry.viewport);
-            } else {
-              bounds.extend(place.geometry.location);
-            }
+              
+        //Calcula distancia de usuario a hospital
+              for (p = 0 ; p < data.length ; p++){
+             
+            var disHopi = new google.maps.LatLng({lat: data[p].cords.lat, lng: data[p].cords.lng});
+            console.log(google.maps.geometry.spherical.computeDistanceBetween (place.geometry.location, disHopi));
+               }
           });
-          map.fitBounds(bounds);
-        });
+        });         
 
      }
 
