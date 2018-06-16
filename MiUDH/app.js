@@ -45,16 +45,17 @@ function initMap() {
               title: place.name,
               position: place.geometry.location
             }));
-              
         //Calcula distancia de usuario a hospital
               for (p = 0 ; p < data.length ; p++){
-             
-            var disHopi = new google.maps.LatLng({lat: data[p].cords.lat, lng: data[p].cords.lng});
-            console.log(google.maps.geometry.spherical.computeDistanceBetween (place.geometry.location, disHopi));
+            var hopiCord = new google.maps.LatLng({lat: data[p].cords.lat, lng: data[p].cords.lng});
+            data[p].dis=(google.maps.geometry.spherical.computeDistanceBetween (place.geometry.location, hopiCord)); 
                }
+        //ordenar de menor a mayor             
+            data.sort(function(a, b) {
+            return a.dis - b.dis;});
           });
-        });         
-
+            
+        });  
      }
 
                                 
