@@ -5,7 +5,7 @@ function initMap() {
           zoom: 13,
           styles: estilo
         });
-         
+//markers para hospitales         
 	   var infowindow = new google.maps.InfoWindow();
 	   for (var i =0; i < data.length; i++)
        {  
@@ -14,7 +14,7 @@ function initMap() {
           map: map,
           title: data[i].nombre
 		 });
-           
+//infowindow para hospitales    
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(data[i].nombre);
@@ -55,7 +55,7 @@ function initMap() {
             return a.dis - b.dis;});
           });            
         });  
-            
+            //dropown list con hospitales
        var select =  document.getElementById('drop');
     for (var l=0; l<data.length;l++){
        var opt = document.createElement('option');
