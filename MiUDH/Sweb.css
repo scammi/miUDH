@@ -1,0 +1,18 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+#side{
+    display flex;
+    flex: 1;
+    background-color: darkgray;
+}
+#map {
+    display: flex;
+    flex:3;
+    height: 100%;
+    width: 100%;
+    order: 1;
+
+}

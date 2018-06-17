@@ -25,10 +25,10 @@ function initMap() {
 	
   var input = ( document.getElementById('pac-input'));
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
+ 
+  //serach box
   var searchBox = new google.maps.places.SearchBox((input));
   var markerz = [];
-  
   searchBox.addListener('places_changed', function() {  
         var places = searchBox.getPlaces();          
                     
@@ -50,12 +50,19 @@ function initMap() {
             var hopiCord = new google.maps.LatLng({lat: data[p].cords.lat, lng: data[p].cords.lng});
             data[p].dis=(google.maps.geometry.spherical.computeDistanceBetween (place.geometry.location, hopiCord)); 
                }
-        //ordenar de menor a mayor             
+        //ordenar de menor a mat             
             data.sort(function(a, b) {
             return a.dis - b.dis;});
-          });
-            
+          });            
         });  
+            
+       var select =  document.getElementById('drop');
+    for (var l=0; l<data.length;l++){
+       var opt = document.createElement('option');
+       opt.text = data[l].nombre;
+       select.appendChild(opt);
+       }
+    
      }
 
                                 

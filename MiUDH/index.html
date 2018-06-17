@@ -3,28 +3,20 @@
 <html>
   <head>
     <title>Simple Map</title>
+    <link rel="stylesheet" type="text/css" href="Sweb.css">
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
-    <style>
-      
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
   </head>
   <body>
     <div id="map"></div>
+    <div id="side">
+        <h1>MiUDH</h1>
+        <select id="drop"></select>
+    </div>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">  
     <script src="app.js"></script>
 	<script src="data.js"></script>
-    <script src="estilo.js"></script>
-
+    <script src="Smap.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgbbkr0kQT7yLAA7uRXHQvZWmuhN9jDAk&libraries=places,geometry&callback=initMap">
     </script>
