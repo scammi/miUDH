@@ -19,8 +19,9 @@ body, html {
     display: flex;
     flex:2;
     align-items: flex-start;
-}
+    flex-direction: column;
 
+}
 #map {
     display: flex;
     flex:3;

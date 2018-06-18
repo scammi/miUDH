@@ -23,10 +23,8 @@ function initMap() {
       })(marker, i));   
     } 
 	
-  var input = ( document.getElementById('pac-input'));
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
- 
   //serach box
+  var input = ( document.getElementById('pac-input')); 
   var searchBox = new google.maps.places.SearchBox((input));
   var markerz = [];
   searchBox.addListener('places_changed', function() {  
@@ -53,19 +51,30 @@ function initMap() {
         //ordenar de menor a mat             
             data.sort(function(a, b) {
             return a.dis - b.dis;});
-          });            
+             });            
         });  
-            //dropown list con hospitales
+    
+   
+    //dropown list con hospitales
+    /*
        var select =  document.getElementById('drop');
     for (var l=0; l<data.length;l++){
        var opt = document.createElement('option');
        opt.text = data[l].nombre;
        select.appendChild(opt);
        }
-    
+    */
      }
-
-                                
+    // prints to list 
+        function myFunction() {  
+            for (var u=0; u<data.length;u++){
+                 var node = document.createElement("LI");
+                 var textnode = document.createTextNode(data[u].lst);
+                 node.appendChild(textnode);
+                 document.getElementById("list").appendChild(node);
+                }
+            }
+                              
 
 
 
