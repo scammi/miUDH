@@ -11,7 +11,7 @@ body, html {
 }
 #top{
     display: flex;
-    flex:1;
+    flex:.80;
     align-items: flex-start;
     flex-direction: column;
 }
