@@ -13,14 +13,21 @@ body, html {
     display: flex;
     flex:1;
     align-items: flex-start;
-
+    flex-direction: column;
+}
+#mid{
+    display: flex;
+    justify-content: space-around;
+}
+#pac-input{
+    display: flex;
+    flex:.95;
+    
 }
 #bot{
     display: flex;
-    flex:2;
+    flex:1.5;
     align-items: flex-start;
-    flex-direction: column;
-
 }
 #map {
     display: flex;
@@ -28,5 +35,4 @@ body, html {
     height: 100%;
     width: 100%;
     order: 1;
-
 }
