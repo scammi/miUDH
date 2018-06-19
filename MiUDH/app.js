@@ -74,12 +74,3 @@ function initMap() {
                  document.getElementById("list").appendChild(node);
                 }
             }
-                              
-
-
-
- 
-
-
-		  
-	

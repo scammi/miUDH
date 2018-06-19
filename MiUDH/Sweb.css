@@ -5,34 +5,24 @@ body, html {
 }
 #side{
     display: flex;
-    flex: 1;
     background-color: darkgray;
     flex-direction: column;
+    flex-basis: 20%;
 }
 #top{
-    display: flex;
-    flex:.80;
     align-items: flex-start;
     flex-direction: column;
 }
 #mid{
-    display: flex;
     justify-content: space-around;
 }
-#pac-input{
-    display: flex;
-    flex:.95;
-    
-}
 #bot{
-    display: flex;
-    flex:1.5;
     align-items: flex-start;
 }
 #map {
     display: flex;
-    flex:3;
     height: 100%;
     width: 100%;
     order: 1;
+    flex-basis: 80%;
 }
