@@ -46,10 +46,10 @@ var data = [
         dis: 0 
     },
     {
-	nombre : '<h1> Dr.Teodoro Alvarez</h1>',
+	nombre : '<h1> PERRA Alvarez</h1>',
     lst: 'Alvarez',
     direccion:'ARANGUREN 2701',
 	cords:  {lat:-34.622570, lng: -58.463789},
     dis: 0 
-    }
+    },
 ];
