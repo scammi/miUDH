@@ -12,7 +12,7 @@ function initMap() {
 		 var marker = new google.maps.Marker({
           position: new google.maps.LatLng(data[i].lat, data[i].long),
           map: map,
-          title: data[i].Nombre
+          icon: 'icon-hs.png'
 		 });
 //infowindow para hospitales    
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
