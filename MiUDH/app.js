@@ -10,14 +10,14 @@ function initMap() {
 	   for (var i =0; i < data.length; i++)
        {  
 		 var marker = new google.maps.Marker({
-          position: data[i].cords,
+          position: new google.maps.LatLng(data[i].lat, data[i].long),
           map: map,
-          title: data[i].nombre
+          title: data[i].Nombre
 		 });
 //infowindow para hospitales    
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          infowindow.setContent(data[i].nombre);
+          infowindow.setContent(data[i].Nombre);
           infowindow.open(map, marker);
         }
       })(marker, i));   
@@ -45,8 +45,8 @@ function initMap() {
             }));
         //Calcula distancia de usuario a hospital
               for (p = 0 ; p < data.length ; p++){
-            var hopiCord = new google.maps.LatLng({lat: data[p].cords.lat, lng: data[p].cords.lng});
-            data[p].dis=(google.maps.geometry.spherical.computeDistanceBetween (place.geometry.location, hopiCord)); 
+            var hospiCord = new google.maps.LatLng({lat: data[p].lat, lng: data[p].long});
+            data[p].dis=(google.maps.geometry.spherical.computeDistanceBetween (place.geometry.location, hospiCord)); 
                }
         //ordenar de menor a mat             
             data.sort(function(a, b) {
@@ -69,7 +69,7 @@ function initMap() {
         function myFunction() {  
             for (var u=0; u<data.length;u++){
                  var node = document.createElement("LI");
-                 var textnode = document.createTextNode(data[u].lst);
+                 var textnode = document.createTextNode(data[u].Nombre);
                  node.appendChild(textnode);
                  document.getElementById("list").appendChild(node);
                 }
