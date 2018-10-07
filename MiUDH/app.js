@@ -46,22 +46,22 @@ function initMap() {
             title: place.name,
             position: place.geometry.location
             }));
-    
-             });            
-        });}
-    //Calcula distancia de usuario a hospital
-function CalcuOrden(){
-     for (p = 0 ; p < data.length ; p++){
-        var hospiCord = new google.maps.LatLng({lat: data[p].lat, lng: data[p].long});
-        data[p].dis=(google.maps.geometry.spherical.computeDistanceBetween (place.geometry.location, hospiCord)); 
+    // calcula distancia desde marker de usuario a hospital
+        for (p = 0 ; p < data.length ; p++){
+           var hospiCord = new google.maps.LatLng({lat: data[p].lat, lng: data[p].long});
+           data[p].dis=(google.maps.geometry.spherical.computeDistanceBetween (place.geometry.location, hospiCord)); 
+           console.log(data[p].dis);
                }
-        //ordenar de menor a mat             
+             });  
+      
+        });
+}
+  
+
+// prints to list y ordena de menos a mayor 
+function myFunction() {
     data.sort(function(a, b) {
         return a.dis - b.dis;});
-}
-
-    // prints to list 
-function myFunction() {
     var list = document.getElementById("list")
         document.getElementById("bot").style.overflow = "scroll"
         for (var u=0; u<data.length;u++){
@@ -70,3 +70,6 @@ function myFunction() {
              node.appendChild(textnode);
              list.appendChild(node);
         }}
+
+
+
