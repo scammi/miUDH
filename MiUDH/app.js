@@ -50,26 +50,27 @@ function initMap() {
         for (p = 0 ; p < data.length ; p++){
            var hospiCord = new google.maps.LatLng({lat: data[p].lat, lng: data[p].long});
            data[p].dis=(google.maps.geometry.spherical.computeDistanceBetween (place.geometry.location, hospiCord)); 
-           console.log(data[p].dis);
                }
              });  
       
         });
 }
   
-
 // prints to list y ordena de menos a mayor 
 function myFunction() {
-    data.sort(function(a, b) {
+    
+    var tempList = data.concat();
+    tempList.sort(function(a, b) {
         return a.dis - b.dis;});
     var list = document.getElementById("list")
-        document.getElementById("bot").style.overflow = "scroll"
-        for (var u=0; u<data.length;u++){
-             var node = document.createElement("LI");
-             var textnode = document.createTextNode(data[u].Nombre);
-             node.appendChild(textnode);
-             list.appendChild(node);
-        }}
+    document.getElementById("bot").style.overflow = "scroll"
+    for (var u=0; u<tempList.length;u++){
+        var node = document.createElement("LI");
+        var textnode = document.createTextNode(tempList[u].Nombre);
+        node.appendChild(textnode);
+        list.appendChild(node);
+        }
+}
 
 
 
