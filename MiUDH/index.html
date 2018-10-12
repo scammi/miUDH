@@ -5,12 +5,14 @@
     <title>Simple Map</title>
     <link rel="stylesheet" type="text/css" href="Sweb.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
   </head>
-  <body>
+  <body> 
     <div id="map"></div>
-    <div id="side">
+    <div id="panel">
+      <div id="side">
         <div id="top">
             <h1 id="wellcome">MiUDH</h1>
             <p>Elegir entre tantas UHDs es dificil, despues de tener nuestros favoritos nos encontramos con una gran cantidad de hospitales que no conocemos, ni sabemos donde estan. Muchos completan al azar, pero es probable que no te toque entre tus primeras opciones. Con esta aplicacion podes ordenar tus opciones segun la distancia de tu casa. Asegurando que toque lo que te toque, sea lo mas cercano a tu hogar posible. </p>
@@ -23,7 +25,13 @@
            <ul id="list">
             </ul>
         </div>
-    </div>
+        </div>
+        <div id="boton">
+            <button class="mdc-fab" aria-label="Favorite">
+                <span class="mdc-fab__icon material-icons">favorite</span>
+            </button>
+        </div>
+    </div>    
     <script src="app.js"></script>
 	<script src="data.js"></script>
     <script src="Smap.js"></script>

@@ -3,11 +3,20 @@ body, html {
   width: 100%;
   display: flex;
 }
+#panel{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 20%;
+    width: 100%;
+    z-index: 2;
+}
 #side{
     display: flex;
     background-color: #ffb770;
     flex-direction: column;
     flex-basis: 20%;
+    height: 100%;
 }
 #top{
     align-items: flex-start;
@@ -22,9 +31,9 @@ body, html {
     font-family: 'Roboto', sans-serif;
 }
 #map {
-    display: flex;
+    position: absolute;
     height: 100%;
     width: 100%;
-    order: 1;
-    flex-basis: 80%;
+    flex-basis: 100%;
 }
+
