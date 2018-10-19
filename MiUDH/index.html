@@ -11,27 +11,29 @@
   </head>
   <body> 
     <div id="map"></div>
-    <div id="panel">
-      <div id="side">
+    <div id="side">
         <div id="top">
             <h1 id="wellcome">MiUDH</h1>
-            <p>Elegir entre tantas UHDs es dificil, despues de tener nuestros favoritos nos encontramos con una gran cantidad de hospitales que no conocemos, ni sabemos donde estan. Muchos completan al azar, pero es probable que no te toque entre tus primeras opciones. Con esta aplicacion podes ordenar tus opciones segun la distancia de tu casa. Asegurando que toque lo que te toque, sea lo mas cercano a tu hogar posible. </p>
+            <p>Con esta aplicacion podes ordenar tus opciones segun la distancia de tu casa. Asegurando que toque lo que te toque, sea lo mas cercano a tu hogar posible. </p>
         </div>
         <div id="mid">
             <input id="pac-input" class="controls" type="text" placeholder="Tu dirrecion">  
-            <input type='button' onclick='myFunction()' value='Submit' />
+            <input type='button' onclick='calDis()' value='Submit' />
         </div>
         <div id="bot">
            <ul id="list">
             </ul>
         </div>
-        </div>
+    </div>
+      
+      <div id="panelControl">
         <div id="boton">
-            <button class="mdc-fab" aria-label="Favorite">
+            <button class="mdc-fab" aria-label="Favorite" onclick="hideSide()">
                 <span class="mdc-fab__icon material-icons">favorite</span>
             </button>
-        </div>
-    </div>    
+          </div>
+          <input id="buscaUDH" class="controls" type="text" placeholder="UDH">   
+      </div>
     <script src="app.js"></script>
 	<script src="data.js"></script>
     <script src="Smap.js"></script>

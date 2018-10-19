@@ -4,8 +4,10 @@ function initMap() {
           center: {lat: -34.603722, lng: -58.381592},
           zoom: 13,
           styles: estilo,
-          disableDefaultUI: true
-        });
+          disableDefaultUI: true,
+          zoomControl: true
+          
+        });    
     //markers para hospitales         
 	   var infowindow = new google.maps.InfoWindow();
 	   for (var i =0; i < data.length; i++)
@@ -55,9 +57,10 @@ function initMap() {
       
         });
 }
-  
+
+
 // prints to list y ordena de menos a mayor 
-function myFunction() {
+function calDis() {
     
     var tempList = data.concat();
     tempList.sort(function(a, b) {
@@ -71,6 +74,16 @@ function myFunction() {
         list.appendChild(node);
         }
 }
+
+ function hideSide() {
+
+    var x = document.getElementById("side");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+} 
 
 
 

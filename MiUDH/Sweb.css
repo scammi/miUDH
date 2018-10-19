@@ -1,22 +1,23 @@
+@import "@material/fab/mdc-fab";
+
 body, html {
   height: 100%;
   width: 100%;
   display: flex;
 }
-#panel{
-    position: fixed;
-    display: flex;
-    flex-direction: row;
-    flex-basis: 20%;
-    width: 100%;
+#panelControl{
+    display;
     z-index: 2;
+    flex-direction: row;
 }
+
 #side{
     display: flex;
     background-color: #ffb770;
     flex-direction: column;
-    flex-basis: 20%;
     height: 100%;
+    z-index: 2;
+    flex-basis: 20%;
 }
 #top{
     align-items: flex-start;
@@ -36,4 +37,10 @@ body, html {
     width: 100%;
     flex-basis: 100%;
 }
-
+#boton{
+    float:left;
+    margin:5px;
+}
+#buscaUDH{
+    margin:5px;
+}
